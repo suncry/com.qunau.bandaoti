@@ -9,10 +9,12 @@
         <scene sceneID="Cm8-YE-LuE">
             <objects>
                 <tabBarController id="oN1-iH-xIJ" customClass="MainTabBarController" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Nw6-W2-B5F">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Nw6-W2-B5F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0039215686269999999" green="0.67843137249999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.0039215686269999999" green="0.67843137249999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ptt-19-g2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -20,4 +22,5 @@
             <point key="canvasLocation" x="418" y="575"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0039215686274509803" green="0.67843137254901964" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
 </document>

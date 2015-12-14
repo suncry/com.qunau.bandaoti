@@ -14,6 +14,9 @@
 		01B391911C1332EB0064E5EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B3918F1C1332EB0064E5EA /* LaunchScreen.storyboard */; };
 		01B79F971C1DBEBF0074952B /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79F961C1DBEBF0074952B /* Explore.storyboard */; };
 		01B79FA01C1DC2680074952B /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79F9F1C1DC2680074952B /* MainTabBarController.m */; };
+		01B79FBA1C1EFC2B0074952B /* Wish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FB91C1EFC2B0074952B /* Wish.storyboard */; };
+		01B79FBC1C1EFC470074952B /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FBB1C1EFC470074952B /* Trip.storyboard */; };
+		01B79FBE1C1EFC910074952B /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FBD1C1EFC910074952B /* Me.storyboard */; };
 		9E0A26014071576E61C4C79B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C797A83231EBE485D659AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		01B79F9A1C1DC1A90074952B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		01B79F9E1C1DC2680074952B /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		01B79F9F1C1DC2680074952B /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		01B79FB91C1EFC2B0074952B /* Wish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wish.storyboard; sourceTree = "<group>"; };
+		01B79FBB1C1EFC470074952B /* Trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		01B79FBD1C1EFC910074952B /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		12E53835C6D4AA93208D0285 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		39DDAD1A93000DBA0C5DBBE4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A5C797A83231EBE485D659AD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +149,7 @@
 		01B79FA71C1EF35C0074952B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				01B79FBD1C1EFC910074952B /* Me.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 		01B79FAC1C1EF3C70074952B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				01B79FBB1C1EFC470074952B /* Trip.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 		01B79FB51C1EF5B60074952B /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				01B79FB91C1EFC2B0074952B /* Wish.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -268,9 +277,9 @@
 		01B79FB71C1EFBC40074952B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				01B3918A1C1332EB0064E5EA /* Main.storyboard */,
 				01B79F9E1C1DC2680074952B /* MainTabBarController.h */,
 				01B79F9F1C1DC2680074952B /* MainTabBarController.m */,
-				01B3918A1C1332EB0064E5EA /* Main.storyboard */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -362,7 +371,10 @@
 			files = (
 				01B79F971C1DBEBF0074952B /* Explore.storyboard in Resources */,
 				01B391911C1332EB0064E5EA /* LaunchScreen.storyboard in Resources */,
+				01B79FBA1C1EFC2B0074952B /* Wish.storyboard in Resources */,
+				01B79FBC1C1EFC470074952B /* Trip.storyboard in Resources */,
 				01B3918E1C1332EB0064E5EA /* Assets.xcassets in Resources */,
+				01B79FBE1C1EFC910074952B /* Me.storyboard in Resources */,
 				01B3918C1C1332EB0064E5EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
