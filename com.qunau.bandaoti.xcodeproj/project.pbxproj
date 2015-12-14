@@ -69,18 +69,12 @@
 			isa = PBXGroup;
 			children = (
 				01B79FB61C1EFADA0074952B /* Common */,
-				01B391841C1332EB0064E5EA /* AppDelegate.h */,
-				01B391851C1332EB0064E5EA /* AppDelegate.m */,
 				01B79FB01C1EF5400074952B /* Resources */,
 				01B79FB11C1EF58D0074952B /* Wish */,
 				01B79FAB1C1EF3B30074952B /* Trip */,
 				01B79FA11C1EF25D0074952B /* Explore */,
 				01B79FA61C1EF3470074952B /* Me */,
-				01B3918A1C1332EB0064E5EA /* Main.storyboard */,
-				01B3918F1C1332EB0064E5EA /* LaunchScreen.storyboard */,
 				01B391811C1332EB0064E5EA /* Supporting Files */,
-				01B79F9E1C1DC2680074952B /* MainTabBarController.h */,
-				01B79F9F1C1DC2680074952B /* MainTabBarController.m */,
 			);
 			path = com.qunau.bandaoti;
 			sourceTree = "<group>";
@@ -263,8 +257,30 @@
 		01B79FB61C1EFADA0074952B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				01B391841C1332EB0064E5EA /* AppDelegate.h */,
+				01B391851C1332EB0064E5EA /* AppDelegate.m */,
+				01B79FB81C1EFBD60074952B /* LaunchScreen */,
+				01B79FB71C1EFBC40074952B /* Main */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		01B79FB71C1EFBC40074952B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				01B79F9E1C1DC2680074952B /* MainTabBarController.h */,
+				01B79F9F1C1DC2680074952B /* MainTabBarController.m */,
+				01B3918A1C1332EB0064E5EA /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		01B79FB81C1EFBD60074952B /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				01B3918F1C1332EB0064E5EA /* LaunchScreen.storyboard */,
+			);
+			name = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		572DE7F842C09F7C9640A99B /* Pods */ = {
