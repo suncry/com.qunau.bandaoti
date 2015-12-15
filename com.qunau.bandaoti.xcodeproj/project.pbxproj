@@ -17,6 +17,7 @@
 		01B79FBA1C1EFC2B0074952B /* Wish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FB91C1EFC2B0074952B /* Wish.storyboard */; };
 		01B79FBC1C1EFC470074952B /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FBB1C1EFC470074952B /* Trip.storyboard */; };
 		01B79FBE1C1EFC910074952B /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FBD1C1EFC910074952B /* Me.storyboard */; };
+		01B79FC51C1FFA3B0074952B /* BDTHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */; };
 		9E0A26014071576E61C4C79B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C797A83231EBE485D659AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		01B79FB91C1EFC2B0074952B /* Wish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wish.storyboard; sourceTree = "<group>"; };
 		01B79FBB1C1EFC470074952B /* Trip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
 		01B79FBD1C1EFC910074952B /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		01B79FC31C1FFA3B0074952B /* BDTHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTHttpClient.h; sourceTree = "<group>"; };
+		01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDTHttpClient.m; sourceTree = "<group>"; };
 		12E53835C6D4AA93208D0285 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		39DDAD1A93000DBA0C5DBBE4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A5C797A83231EBE485D659AD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +269,7 @@
 		01B79FB61C1EFADA0074952B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				01B79FC21C1FF9A40074952B /* Tool */,
 				01B391841C1332EB0064E5EA /* AppDelegate.h */,
 				01B391851C1332EB0064E5EA /* AppDelegate.m */,
 				01B79FB81C1EFBD60074952B /* LaunchScreen */,
@@ -290,6 +294,15 @@
 				01B3918F1C1332EB0064E5EA /* LaunchScreen.storyboard */,
 			);
 			name = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		01B79FC21C1FF9A40074952B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				01B79FC31C1FFA3B0074952B /* BDTHttpClient.h */,
+				01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */,
+			);
+			name = Tool;
 			sourceTree = "<group>";
 		};
 		572DE7F842C09F7C9640A99B /* Pods */ = {
@@ -437,6 +450,7 @@
 				01B79FA01C1DC2680074952B /* MainTabBarController.m in Sources */,
 				01B391861C1332EB0064E5EA /* AppDelegate.m in Sources */,
 				01B391831C1332EB0064E5EA /* main.m in Sources */,
+				01B79FC51C1FFA3B0074952B /* BDTHttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
