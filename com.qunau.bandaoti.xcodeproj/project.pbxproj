@@ -19,6 +19,7 @@
 		01B79FBE1C1EFC910074952B /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FBD1C1EFC910074952B /* Me.storyboard */; };
 		01B79FC51C1FFA3B0074952B /* BDTHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */; };
 		01B79FC81C2012310074952B /* BDTCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79FC71C2012310074952B /* BDTCrypto.m */; };
+		01B79FCB1C218AD20074952B /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79FCA1C218AD20074952B /* ExploreViewController.m */; };
 		9E0A26014071576E61C4C79B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C797A83231EBE485D659AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,9 @@
 		01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDTHttpClient.m; sourceTree = "<group>"; };
 		01B79FC61C2012310074952B /* BDTCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTCrypto.h; sourceTree = "<group>"; };
 		01B79FC71C2012310074952B /* BDTCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDTCrypto.m; sourceTree = "<group>"; };
+		01B79FC91C218AD20074952B /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
+		01B79FCA1C218AD20074952B /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
+		01B79FCC1C218B780074952B /* BDTHttpHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTHttpHeader.h; sourceTree = "<group>"; };
 		12E53835C6D4AA93208D0285 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		39DDAD1A93000DBA0C5DBBE4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A5C797A83231EBE485D659AD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,8 @@
 		01B79FA51C1EF2A00074952B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01B79FC91C218AD20074952B /* ExploreViewController.h */,
+				01B79FCA1C218AD20074952B /* ExploreViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */,
 				01B79FC61C2012310074952B /* BDTCrypto.h */,
 				01B79FC71C2012310074952B /* BDTCrypto.m */,
+				01B79FCC1C218B780074952B /* BDTHttpHeader.h */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -456,6 +463,7 @@
 				01B79FA01C1DC2680074952B /* MainTabBarController.m in Sources */,
 				01B391861C1332EB0064E5EA /* AppDelegate.m in Sources */,
 				01B391831C1332EB0064E5EA /* main.m in Sources */,
+				01B79FCB1C218AD20074952B /* ExploreViewController.m in Sources */,
 				01B79FC51C1FFA3B0074952B /* BDTHttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

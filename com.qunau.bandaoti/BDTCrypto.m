@@ -237,7 +237,7 @@
 //    return [[NSString alloc] initWithBytesNoCopy:characters length:length encoding:NSASCIIStringEncoding freeWhenDone:YES];
 //}
 
-+ (NSString *) encryptUseDES:(NSString *)plainText key:(NSString *)key
++ (NSString *)encryptDES:(NSString *)plainText
 {
     NSString *ciphertext = nil;
     const char *textBytes = [plainText UTF8String];
@@ -248,7 +248,7 @@
     size_t numBytesEncrypted = 0;
     CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmDES,
                                           kCCOptionPKCS7Padding,
-                                          [key UTF8String], kCCKeySizeDES,
+                                          [Des_Key UTF8String], kCCKeySizeDES,
                                           iv,
                                           textBytes, dataLength,
                                           buffer, 1024,
@@ -267,7 +267,7 @@
 }
 
 //解密
-+ (NSString *) decryptUseDES:(NSString*)cipherText key:(NSString*)key
++ (NSString *)decryptDES:(NSString*)cipherText
 {
     
     
@@ -285,7 +285,7 @@
     CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
                                           kCCAlgorithmDES,
                                           kCCOptionPKCS7Padding,
-                                          [key UTF8String],
+                                          [Des_Key UTF8String],
                                           kCCKeySizeDES,
                                           iv,
                                           [cipherData bytes],

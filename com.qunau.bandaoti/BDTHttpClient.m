@@ -8,9 +8,9 @@
 
 #import "BDTHttpClient.h"
 #import <SSKeychain.h>
+#import "BDTCrypto.h"
 
-
-#define DefaultBaseUrl @"http://123123123"
+#define DefaultBaseUrl @"http://api.bdttrip.com/"
 static BDTHttpClient *httpClient;
 
 @interface BDTHttpClient()
@@ -55,14 +55,17 @@ static BDTHttpClient *httpClient;
                failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failureBlock{
     NSString *url = [self.baseUrl stringByAppendingString:urlString];
     NSMutableDictionary *mutParameters = [self addPublicParamWithDict:parameters urlString:urlString];
-
-    [self.manager POST:url parameters:mutParameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    
+    NSString *parameterString = [self dictionaryToJson:mutParameters];
+    NSString *encryptString = [BDTCrypto encryptDES:parameterString];
+    
+    [self.manager POST:url parameters:encryptString progress:^(NSProgress * _Nonnull uploadProgress) {
         //进度
         NSLog(@"总进度 == %lld",uploadProgress.totalUnitCount);
         NSLog(@"已完成 == %lld",uploadProgress.completedUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successBlock(task,responseObject);
-
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failureBlock(task,error);
     }];
@@ -72,8 +75,42 @@ static BDTHttpClient *httpClient;
 
 //添加公共参数 并对参数进行处理
 - (NSMutableDictionary *)addPublicParamWithDict:(NSDictionary *)dict urlString:(NSString *)url {
+    /*  version string 当前使用的 API 版本号
+    	service string 当前请求的API接口名称
+    	app_type int app类型 1:导游端 2:游客端
+    	os_type int  当前平台类型 1:iOS 2:Android
+    	device_token string 设备唯一码
+    	Token string 票据  若为空，只能方位 get_user、login
+     */
+    
     NSMutableDictionary *mutDict = [NSMutableDictionary dictionaryWithDictionary:dict];
+    mutDict[@"version"] = @"1.0";
+    mutDict[@"service"] = url;
+    mutDict[@"app_type"] = @1;
+    mutDict[@"os_type"] = @1;
+    mutDict[@"device_token"] = @"";
+    mutDict[@"Token"] = @"";
+
     return mutDict;
 }
+
+//字典转json格式字符串：
+
+- (NSString*)dictionaryToJson:(NSDictionary *)dic
+
+{
+    
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+}
+
+//NSJSONWritingPrettyPrinted  是有换位符的。
+
+//如果NSJSONWritingPrettyPrinted 是nil 的话 返回的数据是没有 换位符的
+
 
 @end
