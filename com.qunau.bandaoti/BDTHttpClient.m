@@ -8,9 +8,14 @@
 
 #import "BDTHttpClient.h"
 #import <SSKeychain.h>
-#import "BDTCrypto.h"
+#import "JoDes.h"
 
-#define DefaultBaseUrl @"http://api.bdttrip.com/"
+
+#define DefaultBaseUrl @"http://api.bdttrip.com"
+
+//空字符串
+#define     Des_Key           @"19880727"
+
 static BDTHttpClient *httpClient;
 
 @interface BDTHttpClient()
@@ -24,6 +29,8 @@ static BDTHttpClient *httpClient;
     self = [super init];
     if (self) {
         _manager = [AFHTTPSessionManager manager];
+        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         //设置超时时间 暂时默认20秒超时
         _manager.requestSerializer.timeoutInterval = 20;
     }
@@ -53,19 +60,24 @@ static BDTHttpClient *httpClient;
             withParams:(NSDictionary *)parameters
                success:(void(^)(NSURLSessionDataTask *task, id responseObject))successBlock
                failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failureBlock{
-    NSString *url = [self.baseUrl stringByAppendingString:urlString];
+//    NSString *url = [self.baseUrl stringByAppendingString:urlString];
+    NSString *url = self.baseUrl;
+
     NSMutableDictionary *mutParameters = [self addPublicParamWithDict:parameters urlString:urlString];
     
     NSString *parameterString = [self dictionaryToJson:mutParameters];
-    NSString *encryptString = [BDTCrypto encryptDES:parameterString];
+    
+    NSString *encryptString = [JoDes encode:parameterString key:Des_Key];
+
     
     [self.manager POST:url parameters:encryptString progress:^(NSProgress * _Nonnull uploadProgress) {
-        //进度
-        NSLog(@"总进度 == %lld",uploadProgress.totalUnitCount);
-        NSLog(@"已完成 == %lld",uploadProgress.completedUnitCount);
+        //Progress
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(task,responseObject);
-        
+        NSString *result = [[NSString alloc] initWithData:responseObject  encoding:NSUTF8StringEncoding];
+        NSString *jsonString = [JoDes decode:result key:Des_Key];
+        NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
+        successBlock(task,resultDic);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failureBlock(task,error);
     }];
@@ -88,8 +100,8 @@ static BDTHttpClient *httpClient;
     mutDict[@"service"] = url;
     mutDict[@"app_type"] = @1;
     mutDict[@"os_type"] = @1;
-    mutDict[@"device_token"] = @"";
-    mutDict[@"Token"] = @"";
+    mutDict[@"device_token"] = @"1";
+    mutDict[@"Token"] = @"451687895923006";
 
     return mutDict;
 }
@@ -99,18 +111,9 @@ static BDTHttpClient *httpClient;
 - (NSString*)dictionaryToJson:(NSDictionary *)dic
 
 {
-    
     NSError *parseError = nil;
-    
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
-    
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
 }
-
-//NSJSONWritingPrettyPrinted  是有换位符的。
-
-//如果NSJSONWritingPrettyPrinted 是nil 的话 返回的数据是没有 换位符的
-
 
 @end

@@ -25,10 +25,6 @@
  *  @param successBlock  请求成功返回
  *  @param failureBlock  请求失败返回
  */
-//- (void)httpClientPost:(NSString *)urlString
-//            withParams:(NSDictionary *)parameters
-//               success:(void(^)(AFHTTPRequestSerializer *operation, id responseObject))successBlock
-//               failure:(void(^)(AFHTTPRequestSerializer *operation, id responseObject))failureBlock;
 
 - (void)httpClientPost:(NSString *)urlString
             withParams:(NSDictionary *)parameters

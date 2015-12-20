@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A7B0571C27084A00CDAE9A /* JoDes.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A7B0561C27084A00CDAE9A /* JoDes.m */; };
 		01B391831C1332EB0064E5EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B391821C1332EB0064E5EA /* main.m */; };
 		01B391861C1332EB0064E5EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B391851C1332EB0064E5EA /* AppDelegate.m */; };
 		01B3918C1C1332EB0064E5EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B3918A1C1332EB0064E5EA /* Main.storyboard */; };
@@ -18,12 +19,13 @@
 		01B79FBC1C1EFC470074952B /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FBB1C1EFC470074952B /* Trip.storyboard */; };
 		01B79FBE1C1EFC910074952B /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B79FBD1C1EFC910074952B /* Me.storyboard */; };
 		01B79FC51C1FFA3B0074952B /* BDTHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */; };
-		01B79FC81C2012310074952B /* BDTCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79FC71C2012310074952B /* BDTCrypto.m */; };
 		01B79FCB1C218AD20074952B /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B79FCA1C218AD20074952B /* ExploreViewController.m */; };
 		9E0A26014071576E61C4C79B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C797A83231EBE485D659AD /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A7B0551C27084A00CDAE9A /* JoDes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoDes.h; sourceTree = "<group>"; };
+		01A7B0561C27084A00CDAE9A /* JoDes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoDes.m; sourceTree = "<group>"; };
 		01B3917E1C1332EB0064E5EA /* com.qunau.bandaoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.qunau.bandaoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B391821C1332EB0064E5EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01B391841C1332EB0064E5EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,8 +43,6 @@
 		01B79FBD1C1EFC910074952B /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		01B79FC31C1FFA3B0074952B /* BDTHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTHttpClient.h; sourceTree = "<group>"; };
 		01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDTHttpClient.m; sourceTree = "<group>"; };
-		01B79FC61C2012310074952B /* BDTCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTCrypto.h; sourceTree = "<group>"; };
-		01B79FC71C2012310074952B /* BDTCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDTCrypto.m; sourceTree = "<group>"; };
 		01B79FC91C218AD20074952B /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
 		01B79FCA1C218AD20074952B /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 		01B79FCC1C218B780074952B /* BDTHttpHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTHttpHeader.h; sourceTree = "<group>"; };
@@ -310,9 +310,9 @@
 			children = (
 				01B79FC31C1FFA3B0074952B /* BDTHttpClient.h */,
 				01B79FC41C1FFA3B0074952B /* BDTHttpClient.m */,
-				01B79FC61C2012310074952B /* BDTCrypto.h */,
-				01B79FC71C2012310074952B /* BDTCrypto.m */,
 				01B79FCC1C218B780074952B /* BDTHttpHeader.h */,
+				01A7B0551C27084A00CDAE9A /* JoDes.h */,
+				01A7B0561C27084A00CDAE9A /* JoDes.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -459,12 +459,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B79FC81C2012310074952B /* BDTCrypto.m in Sources */,
 				01B79FA01C1DC2680074952B /* MainTabBarController.m in Sources */,
 				01B391861C1332EB0064E5EA /* AppDelegate.m in Sources */,
 				01B391831C1332EB0064E5EA /* main.m in Sources */,
 				01B79FCB1C218AD20074952B /* ExploreViewController.m in Sources */,
 				01B79FC51C1FFA3B0074952B /* BDTHttpClient.m in Sources */,
+				01A7B0571C27084A00CDAE9A /* JoDes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

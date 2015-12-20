@@ -17,7 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[BDTHttpClient shareManager] httpClientPost:ACTION_OF_Get_User withParams:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSDictionary *dic = @{@"phone": @"18628169720",
+                          @"password": @"123456"};
+    [[BDTHttpClient shareManager] httpClientPost:ACTION_OF_Login withParams:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
