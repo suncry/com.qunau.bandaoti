@@ -12,9 +12,11 @@
 
 
 #define DefaultBaseUrl @"http://api.bdttrip.com"
+//#define DefaultBaseUrl @"http://218.89.220.69:22646"
 
 //空字符串
 #define     Des_Key           @"19880727"
+#define     Device_Token           @"BDTDevice_token"
 
 static BDTHttpClient *httpClient;
 
@@ -59,27 +61,34 @@ static BDTHttpClient *httpClient;
 - (void)httpClientPost:(NSString *)urlString
             withParams:(NSDictionary *)parameters
                success:(void(^)(NSURLSessionDataTask *task, id responseObject))successBlock
-               failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failureBlock{
-//    NSString *url = [self.baseUrl stringByAppendingString:urlString];
+               failure:(void(^)(NSURLSessionDataTask *task, NSString *error))failureBlock{
     NSString *url = self.baseUrl;
-
     NSMutableDictionary *mutParameters = [self addPublicParamWithDict:parameters urlString:urlString];
-    
     NSString *parameterString = [self dictionaryToJson:mutParameters];
-    
     NSString *encryptString = [JoDes encode:parameterString key:Des_Key];
 
-    
-    [self.manager POST:url parameters:encryptString progress:^(NSProgress * _Nonnull uploadProgress) {
+    NSDictionary *parametersdic = @{@"parameters":encryptString};
+    [self.manager POST:url parameters:parametersdic progress:^(NSProgress * _Nonnull uploadProgress) {
         //Progress
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *result = [[NSString alloc] initWithData:responseObject  encoding:NSUTF8StringEncoding];
         NSString *jsonString = [JoDes decode:result key:Des_Key];
         NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
-        successBlock(task,resultDic);
+        if ([resultDic[@"Successed"] isEqualToNumber:@0]) {
+            
+            NSString *deviceToken = resultDic[@"DeviceToken"];
+            if (deviceToken.length > 0) {
+                [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:Device_Token];
+            }
+            successBlock(task,resultDic);
+        }
+        else {
+            failureBlock(task,resultDic[@"Error"]);
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failureBlock(task,error);
+        failureBlock(task,error.localizedDescription);
     }];
     
 
@@ -100,9 +109,11 @@ static BDTHttpClient *httpClient;
     mutDict[@"service"] = url;
     mutDict[@"app_type"] = @1;
     mutDict[@"os_type"] = @1;
-    mutDict[@"device_token"] = @"1";
-    mutDict[@"Token"] = @"451687895923006";
-
+    NSString *deviceToken = [[NSUserDefaults standardUserDefaults] valueForKey:Device_Token];
+    if (deviceToken.length == 0) {
+        deviceToken = @"1";
+    }
+    mutDict[@"device_token"] = deviceToken;
     return mutDict;
 }
 
@@ -111,9 +122,12 @@ static BDTHttpClient *httpClient;
 - (NSString*)dictionaryToJson:(NSDictionary *)dic
 
 {
-    NSError *parseError = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
-    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSMutableArray *jsonArray = [[NSMutableArray alloc] init];
+    for (NSString *key in dic.allKeys) {
+        [jsonArray addObject:[NSString stringWithFormat:@"%@=%@",key,dic[key]]];
+    }
+    NSString *jsonString = [jsonArray componentsJoinedByString:@"&"];
+    return jsonString;
 }
 
 @end

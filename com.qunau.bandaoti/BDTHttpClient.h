@@ -12,8 +12,6 @@
 @interface BDTHttpClient : NSObject
 /**
  *  @brief  网络请求实体
- *
- *  @return 网络请求实体
  */
 + (BDTHttpClient *)shareManager;
 
@@ -29,5 +27,5 @@
 - (void)httpClientPost:(NSString *)urlString
             withParams:(NSDictionary *)parameters
                success:(void(^)(NSURLSessionDataTask *task, id responseObject))successBlock
-               failure:(void(^)(NSURLSessionDataTask *task, NSError *error))failureBlock;
+               failure:(void(^)(NSURLSessionDataTask *task, NSString *error))failureBlock;
 @end

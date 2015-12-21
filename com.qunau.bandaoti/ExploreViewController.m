@@ -7,6 +7,7 @@
 //
 
 #import "ExploreViewController.h"
+#import "LoginUserModel.h"
 
 @interface ExploreViewController ()
 
@@ -16,13 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSDictionary *dic = @{@"phone": @"18628169720",
-                          @"password": @"123456"};
-    [[BDTHttpClient shareManager] httpClientPost:ACTION_OF_Login withParams:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
+
+    [LoginUserModel getUserWithSuccess:^(LoginUser *user) {
+        NSLog(@"获取到用户的 AuditState == %ld",(long)user.AuditState);
+    } failure:^(NSString *error) {
+        NSLog(@"获取到用户出错 == %@",error);
     }];
 }
 

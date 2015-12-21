@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01A7B0571C27084A00CDAE9A /* JoDes.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A7B0561C27084A00CDAE9A /* JoDes.m */; };
+		01A7B05B1C27F4D700CDAE9A /* LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A7B05A1C27F4D700CDAE9A /* LoginUser.m */; };
+		01A7B05F1C27F7BC00CDAE9A /* LoginUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A7B05E1C27F7BC00CDAE9A /* LoginUserModel.m */; };
 		01B391831C1332EB0064E5EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B391821C1332EB0064E5EA /* main.m */; };
 		01B391861C1332EB0064E5EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B391851C1332EB0064E5EA /* AppDelegate.m */; };
 		01B3918C1C1332EB0064E5EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B3918A1C1332EB0064E5EA /* Main.storyboard */; };
@@ -26,6 +28,10 @@
 /* Begin PBXFileReference section */
 		01A7B0551C27084A00CDAE9A /* JoDes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoDes.h; sourceTree = "<group>"; };
 		01A7B0561C27084A00CDAE9A /* JoDes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoDes.m; sourceTree = "<group>"; };
+		01A7B0591C27F4D700CDAE9A /* LoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUser.h; sourceTree = "<group>"; };
+		01A7B05A1C27F4D700CDAE9A /* LoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUser.m; sourceTree = "<group>"; };
+		01A7B05D1C27F7BC00CDAE9A /* LoginUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUserModel.h; sourceTree = "<group>"; };
+		01A7B05E1C27F7BC00CDAE9A /* LoginUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUserModel.m; sourceTree = "<group>"; };
 		01B3917E1C1332EB0064E5EA /* com.qunau.bandaoti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.qunau.bandaoti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B391821C1332EB0064E5EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01B391841C1332EB0064E5EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01A7B0581C27F0B100CDAE9A /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				01A7B0591C27F4D700CDAE9A /* LoginUser.h */,
+				01A7B05A1C27F4D700CDAE9A /* LoginUser.m */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
 		01B391751C1332EB0064E5EA = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +142,8 @@
 		01B79FA31C1EF2950074952B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01A7B05D1C27F7BC00CDAE9A /* LoginUserModel.h */,
+				01A7B05E1C27F7BC00CDAE9A /* LoginUserModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -278,6 +295,7 @@
 		01B79FB61C1EFADA0074952B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				01A7B0581C27F0B100CDAE9A /* DataModel */,
 				01B79FC21C1FF9A40074952B /* Tool */,
 				01B391841C1332EB0064E5EA /* AppDelegate.h */,
 				01B391851C1332EB0064E5EA /* AppDelegate.m */,
@@ -460,8 +478,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				01B79FA01C1DC2680074952B /* MainTabBarController.m in Sources */,
+				01A7B05B1C27F4D700CDAE9A /* LoginUser.m in Sources */,
 				01B391861C1332EB0064E5EA /* AppDelegate.m in Sources */,
 				01B391831C1332EB0064E5EA /* main.m in Sources */,
+				01A7B05F1C27F7BC00CDAE9A /* LoginUserModel.m in Sources */,
 				01B79FCB1C218AD20074952B /* ExploreViewController.m in Sources */,
 				01B79FC51C1FFA3B0074952B /* BDTHttpClient.m in Sources */,
 				01A7B0571C27084A00CDAE9A /* JoDes.m in Sources */,
